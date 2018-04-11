@@ -83,15 +83,17 @@ public extension CGRect {
     var bounds: CGRect {
         return CGRect(origin: .zero, size: size)
     }
-    
-    /**
-     An initializer with a given point and size.
-     - Parameter center: A CGPoint.
-     - Parameter size: A CGSize.
-     */
-    init(center: CGPoint, size: CGSize) {
-        self.init(x: center.x - size.width / 2, y: center.y - size.height / 2, width: size.width, height: size.height)
-    }
+}
+
+internal extension CGRect {
+  /**
+   An initializer with a given point and size.
+   - Parameter center: A CGPoint.
+   - Parameter size: A CGSize.
+   */
+  init(center: CGPoint, size: CGSize) {
+    self.init(x: center.x - size.width / 2, y: center.y - size.height / 2, width: size.width, height: size.height)
+  }
 }
 
 public extension CGFloat {
